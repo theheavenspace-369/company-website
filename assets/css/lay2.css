@@ -1,0 +1,702 @@
+/* CSS Document */
+body{
+	margin: 0px;
+	padding: 0px;
+}
+.layout{
+	display: flex;
+}
+.parkmesure{
+	color: white;
+	    writing-mode: vertical-lr;
+	    padding: 28px 0 0 0;
+}
+
+.park1{
+	background: #64b244;
+    height: 193px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+    margin: 0 0 0 -1px;
+	   
+}
+
+.park2{
+	background: #64b244;
+	height: 216px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.park3{
+	background: #64b244;
+	height: 243px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.park4{
+	background: #64b244;
+	height: 272px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+	
+}
+.park5{
+	background: #64b244;
+	    height: 172px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.park6{
+	background: #64b244;
+	    height: 154px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.mainroad{
+	    width: 76px;
+    background: #dbdbdb;
+/*    height: 100vh;*/
+	    text-align: center;
+    display: flex;
+    align-items: center;
+    writing-mode: vertical-lr;
+    justify-content: center;
+}
+.mainroad1{
+	    
+   
+   
+	    font-size: 13px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    writing-mode: vertical-lr;
+    justify-content: center;
+}
+.insidebox{
+	    width: 67px;
+    height: 74px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.bodr{
+	width: 70px;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: 67px;
+    rotate: 11deg;
+}
+
+.layout10{
+	    width: 67px;
+    height: 64px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: 30px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	
+}
+.layout12{
+	    width: 67px;
+    height: 64px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	
+}
+.layout13{
+	    width: 67px;
+    height: 64px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -1px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	
+}
+.layout11{
+	    width: 67px;
+    height: 37px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	    margin: -2px 0 0 0;
+}
+.layout20{
+	    width: 67px;
+    height: 64px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -3px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	
+}
+
+.layboxmain1{
+	    width: 67px;
+    height: 54px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: 31px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;cursor: pointer;
+	
+}
+
+.layboxmain2{
+	 width: 67px;
+    height: 54px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+}
+.boxnumber{
+	
+}
+.layboxmain3{
+	 width: 67px;
+    height: 96px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+}
+.layboxmain4{
+	 width: 67px;
+    height: 136px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+}
+
+.layboxmains{
+	
+	    margin: 0 0 0 34px;
+}
+.layboxmainsinside{
+	
+	    margin: 0 0 0 34px;
+}
+.layboxmains2{
+	
+	    margin: 0 0 0 0px;
+}
+
+.insideboxtop3{
+	  width: 67px;
+    height: 34px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:45px 0 0 0;
+}
+
+.insideboxtop1{
+	  width: 67px;
+    height: 56px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:20px 0 0 0;
+}
+.insideboxtop2{
+	  width: 67px;
+    height: 45px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:31px 0 0 0;
+}
+.insideboxtop4{
+	  width: 67px;
+    height: 27px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:52px 0 0 0;
+}
+.insideboxtop5{
+	  width: 67px;
+    height: 35px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:63px 0 0 0;
+}
+.insideboxtop6{
+	  width: 67px;
+    height: 68px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:70px 0 0 0;
+}
+.insideboxtop7{
+	  width: 67px;
+    height: 89px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:89px 0 0 0;
+}
+.insideboxtop8{
+	  width: 67px;
+    height: 72px;
+	
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:106px 0 0 0;
+}
+.insideboxtop9{
+	  width: 67px;
+    height: 89px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	        margin: 129px 0 0 0;
+}
+.insideboxtop10{
+	  width: 67px;
+    height: 72px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:146px 0 0 0;
+}
+.insideboxtop11{
+	  width: 67px;
+    height: 89px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	        margin: 168px 0 0 0;
+}
+.insideboxtop12{
+	  width: 67px;
+    height: 73px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:184px 0 0 0;
+}
+.insideboxtop13{
+	  width: 67px;
+    height: 208px;
+	background:#fbe5ba;
+	    clip-path: polygon(0% 0%, 100% 18%, 100% 100%, 0% 100%);
+	border: 3px solid #000;
+	position: relative;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+	    margin:212px 0 0 0;
+}
+.bodr2 {
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+          bottom: 51px;
+    rotate: 9deg;
+}
+.bodr3{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 41px;
+    rotate: 8deg;
+}
+.bodr4{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+   bottom: 2px;
+    rotate: 6deg;
+}
+.bodr41{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+   bottom: 1px;
+    rotate: 4deg;
+}
+.bodr5{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 31px;
+    rotate: 5deg;
+}
+.bodr6{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 24px;
+    rotate: 5deg;
+}
+.bodr7{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 2px;
+    rotate: 5deg;
+}
+.bodr8{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 32px;
+    rotate: 7deg;
+}
+.bodr9{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 1px;
+    rotate: 5deg;
+}
+.bodr10{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+         bottom: 62px;
+    rotate: 11deg;
+}
+.bodr11{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+   bottom: 81px;
+    rotate:13deg;
+}
+.bodr12{
+   width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+     bottom: 66px;
+    rotate: 12deg;
+}
+.bodr13{
+      width: 75px;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: 115px;
+    rotate: 20deg;
+}
+.layboxmainb{
+	 width: 67px;
+    height: 110px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.bodrb{
+	
+	 width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+       bottom: 4px;
+    rotate: 10deg;
+}
+.layboxmain2b{
+	 width: 67px;
+    height: 82px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.layboxmain3b{
+	 width: 67px;
+    height: 48px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.layboxmain4b{
+	 width: 67px;
+    height: 57px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.layboxmain5b{
+	 width: 67px;
+    height: 64px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+
+.layboxmain6b{
+	 width: 67px;
+    height: 41px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.layboxmain7b{
+	 width: 67px;
+    height: 47px;
+    background: #fbe5ba;
+    border: 3px solid #000;
+    position: relative;
+    margin: -2px 0 0 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 89%);
+}
+.bodrb2{
+	
+	 width: 70px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    bottom: 3px;
+    rotate: 7deg;
+}
+.layboxmains1{
+	margin: 0 0 0 -3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
