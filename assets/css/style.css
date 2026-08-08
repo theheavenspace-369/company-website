@@ -15273,7 +15273,8 @@ Contact Two
 
 .contact-page__input-box input[type="text"],
 .contact-page__input-box input[type="email"],
-.contact-page__input-box input[type="number"] {
+.contact-page__input-box input[type="number"],
+.contact-page__input-box input[type="tel"] {
   height: 57px;
   width: 100%;
   background-color: rgba(var(--builza-white-rgb), 0.03);

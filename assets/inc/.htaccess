@@ -4,8 +4,8 @@
     Deny from all
 </FilesMatch>
 
-# Allow only sendemail.php
-<FilesMatch "^sendemail\.php$">
+# Allow only the public form-handling endpoints
+<FilesMatch "^(sendemail|save-contact)\.php$">
     Order allow,deny
     Allow from all
 </FilesMatch>
@@ -16,8 +16,9 @@
     Deny from all
 </FilesMatch>
 
-# Deny access to app folder
+# Deny access to app, template and data folders
 RewriteEngine On
 RewriteRule ^app/.*$ - [F,L]
 RewriteRule ^template/.*$ - [F,L]
+RewriteRule ^data/.*$ - [F,L]
 ErrorDocument 403 <h1>403-Forbidden-:(</h1>

@@ -1,0 +1,29 @@
+[
+    {
+        "id": "37e8868c52df86de",
+        "name": "Janardhana Aratipamula",
+        "email": "jana@test.com",
+        "phone": "7857909098",
+        "subject": "jana subject",
+        "message": "jgfj jycdjhm uyttjhbkhyf",
+        "submitted_at": "2026-08-07T12:32:21+02:00"
+    },
+    {
+        "id": "3358ee27ea3818ae",
+        "name": "mogilipalepu harikrishna",
+        "email": "mharikrishna2244@gmail.com",
+        "phone": "9098765432",
+        "subject": "jana subject",
+        "message": "jhcvfnb ytxjfgvm  jyrtjhmv",
+        "submitted_at": "2026-08-07T12:33:38+02:00"
+    },
+    {
+        "id": "ec0d743405cbab99",
+        "name": "hemanth",
+        "email": "hemanth@gmail.com",
+        "phone": "7890889098",
+        "subject": "test",
+        "message": "testhgfj jyfm jyfy",
+        "submitted_at": "2026-08-07T12:34:36+02:00"
+    }
+]
