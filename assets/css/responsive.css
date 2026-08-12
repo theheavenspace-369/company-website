@@ -3780,9 +3780,41 @@
 
 
 
-    .main-menu-three__top,
-    .main-menu-three__right {
+    .main-menu-three__top {
         display: none;
+    }
+
+    .main-menu-three__wrapper-inner {
+        flex-wrap: nowrap;
+    }
+
+    .main-menu-three__logo img {
+        max-width: 150px;
+        width: 150px;
+        height: auto;
+    }
+
+    .main-menu-three__main-menu-box {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .main-menu-three__right {
+        display: block;
+        margin-left: 15px;
+    }
+
+    .main-menu-three__right .thm-btn {
+        padding: 6px 16px 6px 6px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .main-menu-three__right .thm-btn>span {
+        height: 32px;
+        width: 32px;
+        font-size: 12px;
     }
 
 

@@ -20657,5 +20657,37 @@ Product Description
 
 
 /*--------------------------------------------------------------
+# Form validation feedback (contact-form-validated)
+--------------------------------------------------------------*/
+.contact-form-validated label.error {
+  display: block;
+  color: #ff4d4f;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.contact-form-validated input.error,
+.contact-form-validated textarea.error,
+.contact-form-validated select.error {
+  border-color: #ff4d4f !important;
+}
+
+.contact-form-validated .result.success {
+  display: block;
+  color: #1b8a5a;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.contact-form-validated .result.error {
+  display: block;
+  color: #ff4d4f;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/*--------------------------------------------------------------
 # End All Css
 --------------------------------------------------------------*/

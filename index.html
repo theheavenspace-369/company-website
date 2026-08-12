@@ -740,19 +740,23 @@ Your property deserves a great presentation. Select your favourite design and ta
                                             <h5>Share <br> Your Ideas <br> With Us</h5>
                                         </div>
                                         <div class="who-we-serve__form-inner-wrap">
-                                            <form class="contact-form-validated who-we-serve__form"
+                                            <form id="request-call-form" class="contact-form-validated who-we-serve__form"
                                                 action="assets/inc/sendemail.php" method="post" novalidate="novalidate">
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6">
                                                         <div class="who-we-serve__input-box">
                                                             <input type="text" name="name" placeholder="Full Name"
-                                                                required="">
+                                                                required pattern="[A-Za-z\s\-'\.]{2,100}" minlength="2"
+                                                                maxlength="100"
+                                                                title="Please enter a valid name (letters only, at least 2 characters).">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-6 col-lg-6 col-md-6">
                                                         <div class="who-we-serve__input-box">
-                                                            <input type="text" name="Phone" placeholder="Phone Number"
-                                                                required="">
+                                                            <input type="tel" name="Phone" placeholder="Phone Number"
+                                                                required pattern="(\+91[\-\s]?)?[6-9][0-9]{9}"
+                                                                maxlength="15"
+                                                                title="Please enter a valid 10-digit mobile number (optionally starting with +91).">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-6 col-lg-6 col-md-6">
@@ -769,7 +773,7 @@ Your property deserves a great presentation. Select your favourite design and ta
                                                     <div class="col-xl-12">
                                                         <div class="who-we-serve__input-box">
                                                             <div class="select-box">
-                                                                <select class="selectmenu wide">
+                                                                <select class="selectmenu wide" name="service">
                                                                     <option selected="selected">Type Of Service</option>
                                                                     <option>Type Of Service 01</option>
                                                                     <option>Type Of Service 02</option>
@@ -782,7 +786,7 @@ Your property deserves a great presentation. Select your favourite design and ta
                                                     </div>
                                                     <div class="col-xl-12">
                                                         <div class="who-we-serve__input-box text-message-box">
-                                                            <textarea name="message" placeholder="Messege"></textarea>
+                                                            <textarea name="message" placeholder="Messege" maxlength="2000"></textarea>
                                                         </div>
                                                         <div class="who-we-serve__btn-box">
                                                             <button type="submit" class="thm-btn">Request a Call<span
@@ -1303,6 +1307,8 @@ Your property deserves a great presentation. Select your favourite design and ta
 
 
     <!-- template js -->
+    <script src="assets/js/form-config.js"></script>
+    <script src="assets/js/contact-storage.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

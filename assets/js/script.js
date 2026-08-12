@@ -817,52 +817,64 @@
 
 
 
+  // This build of jquery.validate doesn't ship the "pattern" method, but
+  // several forms rely on HTML5 pattern="" attributes (e.g. phone/name
+  // formats) that must still be enforced client-side. Add it once.
+  if ($.validator && !$.validator.methods.pattern) {
+    $.validator.addMethod("pattern", function (value, element, param) {
+      if (this.optional(element)) return true;
+      if (typeof param === "string") param = new RegExp("^(?:" + param + ")$");
+      return param.test(value);
+    }, "Please enter a valid value.");
+  }
+
   $(".contact-form-validated").each(function () {
-    $(this).validate({
-      rules: {
-        name: {
-          required: false,
-          minlength: 2
-        },
-        email: {
-          required: true,
-          email: true
-        },
-        Phone: {
-          required: false,
-          minlength: 6
-        },
-        phone: {
-          required: false,
-          minlength: 6
-        },
-        message: {
-          required: false,
-          minlength: 10
-        }
-      },
-      messages: {
-        name: {
-          required: "Please enter your name.",
-          minlength: "Name must be at least 2 characters."
-        },
-        email: {
-          required: "Please enter your email.",
-          email: "Please enter a valid email address."
-        },
-        Phone: {
-          required: "Please enter your phone number.",
-          minlength: "Please enter a valid phone number."
-        },
-        phone: {
-          required: "Please enter your phone number.",
-          minlength: "Please enter a valid phone number."
-        },
-        message: {
-          required: "Please enter your message.",
-          minlength: "Message must be at least 10 characters."
-        }
-      },
+    var $form = $(this);
+    var rules = {};
+    var messages = {};
+
+    // Derive validation rules per form from each field's own HTML
+    // attributes (required, type="email", minlength, maxlength, pattern)
+    // instead of one hardcoded rule set, since different forms on the
+    // site (Get A Quote, Request A Call, quick chat, newsletter) collect
+    // different fields.
+    $form.find("input[name], textarea[name], select[name]").each(function () {
+      var $el = $(this);
+      var name = $el.attr("name");
+      if (!name || rules[name]) return;
+
+      var rule = {};
+      var msg = {};
+
+      if ($el.is("[required]")) {
+        rule.required = true;
+        msg.required = "This field is required.";
+      }
+      if ($el.attr("type") === "email") {
+        rule.email = true;
+        msg.email = "Please enter a valid email address.";
+      }
+      if ($el.attr("minlength")) {
+        rule.minlength = parseInt($el.attr("minlength"), 10);
+        msg.minlength = "Please enter at least " + rule.minlength + " characters.";
+      }
+      if ($el.attr("maxlength")) {
+        rule.maxlength = parseInt($el.attr("maxlength"), 10);
+      }
+      if ($el.attr("pattern")) {
+        rule.pattern = $el.attr("pattern");
+        msg.pattern = $el.attr("title") || "Please enter a valid value.";
+      }
+
+      if (Object.keys(rule).length) {
+        rules[name] = rule;
+        messages[name] = msg;
+      }
+    });
+
+    $form.validate({
+      rules: rules,
+      messages: messages,
       submitHandler: function (form) {
         var $form = $(form);
         var $submitBtn = $form.find('button[type="submit"], input[type="submit"]');
@@ -875,31 +887,62 @@
         else if ($submitBtn.is("input")) $submitBtn.data("original-val", originalBtnText).val(loadingText);
         $result.removeClass("success error").text("");
 
-        $.ajax({
-          url: $form.attr("action"),
-          type: "POST",
-          data: $form.serialize(),
-          success: function (response) {
-            $result.text(response).addClass("success");
-            $form.find('input[type="text"], input[type="email"], input[type="tel"], textarea').val("");
-          },
-          error: function (xhr) {
-            var msg = "An error occurred. Please try again later.";
-            if (xhr.responseText && xhr.responseText.trim().length > 0) {
-              msg = xhr.responseText.trim();
-            } else if (xhr.status === 0) {
-              msg = "Network error. Please check your connection.";
-            } else if (xhr.status >= 500) {
-              msg = "Server error. Please try again later.";
-            }
-            $result.text(msg).addClass("error");
-          },
-          complete: function () {
-            $submitBtn.prop("disabled", false).removeClass("loading");
-            if ($submitBtn.is("button")) $submitBtn.text($submitBtn.data("original-text") || originalBtnText);
-            else if ($submitBtn.is("input")) $submitBtn.val($submitBtn.data("original-val") || originalBtnText);
+        var resetFields = function () {
+          $form.find('input[type="text"], input[type="email"], input[type="tel"], textarea').val("");
+        };
+        var finish = function () {
+          $submitBtn.prop("disabled", false).removeClass("loading");
+          if ($submitBtn.is("button")) $submitBtn.text($submitBtn.data("original-text") || originalBtnText);
+          else if ($submitBtn.is("input")) $submitBtn.val($submitBtn.data("original-val") || originalBtnText);
+        };
+
+        // Pure HTML/CSS/JS site: no PHP call. Keep a local JSON copy (see
+        // assets/js/contact-storage.js) as a backup/audit trail, best-effort.
+        var record = null;
+        try {
+          if (window.HeavenSpaceStorage) {
+            record = window.HeavenSpaceStorage.saveSubmission(form);
           }
+        } catch (e) { /* local save is best-effort, not the source of truth */ }
+
+        // The real delivery path: post straight to Web3Forms (see
+        // assets/js/form-config.js for the access key) so the site owner
+        // actually gets notified, since nothing server-side reads the
+        // local copy above.
+        var accessKey = window.HEAVEN_SPACE_FORM_CONFIG && window.HEAVEN_SPACE_FORM_CONFIG.web3formsAccessKey;
+
+        if (!accessKey) {
+          $result.text("Thank you! Your message has been received.").addClass("success");
+          resetFields();
+          finish();
+          return false;
+        }
+
+        var payload = { access_key: accessKey };
+        $form.serializeArray().forEach(function (field) {
+          payload[field.name] = field.value;
         });
+        payload.from_name = payload.name || "Website visitor";
+        if (!payload.subject) {
+          payload.subject = "New " + (record && record.form ? record.form : "contact") + " submission - The Heaven Space";
+        }
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (!data.success) throw new Error(data.message || "Submission failed");
+            $result.text("Thank you! Your message has been received.").addClass("success");
+            resetFields();
+          })
+          .catch(function () {
+            $result.text("We couldn't reach our server. Please try again in a moment.").addClass("error");
+          })
+          .then(finish, finish);
+
         return false;
       }
     });
